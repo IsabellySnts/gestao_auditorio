@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    z-index: 1000;
+
+}
+
+nav .innav{
+    height: 2em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    font-size: 15px;
+    background: #cc0000;
+    
+    
+}
+
+nav .innav .nav-instituicoes{
+    height: 100%;
+    line-height: 70px;
+    margin-left: 70em;
+}
+
+nav .innav .nav-instituicoes .links{
+    height: 100%;
+    line-height: 30px;
+    
+}
+
+nav .innav .nav-instituicoes .links{
+    display: flex;
+   
+}
+
+nav .innav .nav-instituicoes .links li{
+    list-style: none;
+    position: relative;
+    display: flex;
+    float: right;
+    padding: 0 14px;
+}
+
+
+nav .innav .nav-instituicoes .links li{
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+}
+
+nav .innav .nav-instituicoes .links li a:hover{
+    color: #940909;
+    
+}
+
+nav .innav .nav-instituicoes .links li a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    white-space: nowrap;
+    height: 100%;
+}
+
+nav .navbar{
+    height: 109%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 190px;
+    border-bottom: 1px solid #cc0000;
+    background-color: #fff;
+
+}
+
+nav .navbar .logo img {
+    width: 170px;
+ 
+}
+
+nav .navbar .nav-links{
+    height: 100%;
+    line-height: 70px;
+}
+
+nav .navbar .nav-links .links{
+    display: flex;
+}
+
+nav .navbar .nav-links .links li{
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+}
+
+nav .navbar .nav-links .links li a{
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+    height: 100%;   
+}
+
+nav .navbar .nav-links .links li .icon{
+    color: #000;
+    height: 100%;
+    width: 22px;
+    text-align: center;
+    line-height: 70px;
+    transition: all 0.3s ease;
+}
+
+nav .navbar .nav-links .links li:hover .icon-css, 
+nav .navbar .nav-links .links li:hover .icon-js{
+
+    transform: rotate(180deg);
+
+}
+
+.navbar .nav-links .links .sub-menu {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    background-color: #fff;
+    line-height: 40px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    
+}
+
+.navbar .nav-links .links .sub-menu li:hover{
+
+    background-color: #fcebeb;
+}
+
+
+.navbar .nav-links .links .sub-menu li{
+    padding: 0 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: #000 1px solid;
+}
+.navbar .nav-links .links .sub-menu li a{
+    font-size: 16px;
+    font: 500;
+}
+
+nav .navbar .nav-links .links li:hover .adm-sub-menu,
+nav .navbar .nav-links .links li:hover .clinica-sub-menu{
+    display: block;
+}

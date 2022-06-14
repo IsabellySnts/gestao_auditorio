@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+<head>
+ <link rel="stylesheet" href="css/styleAdmC.css">
+    <link rel="stylesheet" href="css/EstiloC.css">
+    <link rel="stylesheet" href="css/styleModalC.css">
+    <link rel="stylesheet" href="css/styleC.css">
+    <link rel="icon" href="img/icone_senai.png">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/ca14b9e588.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senai | Login Adm</title>
+
+</head>
+<body>
+
+<nav>
+
+			<div class="innav">
+	
+				<div class="nav-instituicoes">
+					<ul class="links">
+						<li>
+							<a href="#">FIESP</a>
+						</li>
+						<li>
+							<a href="#">CIESP</a>
+						</li>
+						<li>
+							<a href="#">SESI</a>
+						</li>
+						<li>
+							<a href="#">SENAI</a>
+						</li>
+						<li>
+							<a href="#">IRS</a>
+						</li>
+						<li>
+							<a href="#">FIESP</a>
+						</li>
+						<li>
+							<a href="#">|</a>
+						</li>
+	
+						<li>
+							<a href="https://pt-br.facebook.com/senaicotia/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+						</li>
+						<li>
+							<a href="#">|</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/senaicotia" target="_blank"><i class="fab fa-twitter"></i></a>
+						</li>
+						<li>
+							<a href="#">|</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/senaicotia" target="_blank"><i class="fab fa-youtube"></i></a>
+						</li>
+						<li>
+							<a href="#">|</a>
+						</li>
+	
+						<li>
+							<a href="https://twitter.com/senaicotia" target="_blank"><i class="fab fa-linkedin"></i></a>
+						</li>
+	
+						<li>
+							<a href="#">|</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/senaicotia/" target="_blank"><i class="fab fa-instagram"></i></a>
+						</li>
+	
+						
+		
+					</ul>
+			</div>
+			
+			
+			</div>
+			<div class="navbar">
+	
+				<div class="logo">
+					<img src="img//logo.png">
+				</div>
+				<div class="nav-links">
+					<ul class="links">
+						<li>
+							<a href="Inicio">Inicio</a>
+						</li>
+					   
+						
+						<li>
+							<a href="ManualPt1">Manual do Auditório</a>
+						   
+						</li>
+						<li>
+							<a href="#">Entre em contato</a>
+						   
+						</li>
+	
+	<li>
+							<a href="cadastroUsuario">Cadastro</a>
+						   
+						</li>
+						<li>
+							<a href="loginUsuario" th:if="${session.admLogado == null}" >Login</a>
+							<i class='bx bxs-chevron-down icon icon-css'></i>
+							<ul class="adm-sub-menu sub-menu">
+								<li>
+									<a href="/loginUsuario">Usuário</a>
+								</li>
+							   
+							</ul>
+						   
+						</li>
+	
+						
+					</ul>
+				</div>
+	
+			</div>
+		</nav>
+
+
+<div class="container">
+<div class="screen">
+<div class="screen-content">
+
+
+<form action="loginAdm" method="post" class="login">
+<div class="input-field">
+<i class="login_icon material-icons">person</i>
+<input class="login_input" type="text" id="NIF" name="nif" placeholder=" NIF">
+</div>
+
+
+
+<div class="input-field">
+<i class="login_icon material-icons">lock</i>
+<input class="login_input" type="password" id="senha" name="senha" placeholder=" Senha">
+</div>
+
+
+
+<button class="button-login">
+<span class="button-text">Login</span>
+
+<i class="button_icon material-icons">navigate_next</i>
+</button>
+
+</form>
+<div>
+<img class="imagemzinha" src="img/logo.png" alt="">
+</div>
+
+</div>
+
+<div class="screen-background">
+<span class="screen-background-shape screen-background-shape4"></span>
+<span class="screen-background-shape screen-background-shape3"></span>
+<span class="screen-background-shape screen-background-shape2"></span>
+<span class="screen-background-shape screen-background-shape1"></span>
+</div>
+
+</div>
+</div>
+  <ul class="squares"></ul>
+
+    <footer id="footer">
+        <div id="niveis4" class="nivel4">
+        	<div class="content_footer">
+	        	<p>Criado por DEBS &copy; 2022 Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scriptEfeito.js"></script>
+    <script src="js/cabecalho.js"></script>
+    
+</body>
+</html>

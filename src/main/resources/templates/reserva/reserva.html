@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet">
+
+<link href="css/Estilo.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet"
+href="https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css">
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css'
+rel='stylesheet'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet">
+<script src="https://kit.fontawesome.com/ca14b9e588.js"
+crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="css/styleModal.css">
+
+
+
+
+
+<title>Calendário</title>
+
+
+
+<link rel="stylesheet" href="css/styleReserva.css">
+</head>
+<body>
+<nav>
+
+
+
+<div class="innav">
+
+
+
+<div class="nav-instituicoes">
+<ul class="links">
+<li><a href="#">FIESP</a></li>
+<li><a href="#">CIESP</a></li>
+<li><a href="#">SESI</a></li>
+<li><a href="#">SENAI</a></li>
+<li><a href="#">IRS</a></li>
+<li><a href="#">FIESP</a></li>
+<li><a href="#">|</a></li>
+
+
+
+<li><a href="https://pt-br.facebook.com/senaicotia/"
+target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#">|</a></li>
+<li><a href="https://twitter.com/senaicotia" target="_blank"><i
+class="fab fa-twitter"></i></a></li>
+<li><a href="#">|</a></li>
+<li><a href="https://twitter.com/senaicotia" target="_blank"><i
+class="fab fa-youtube"></i></a></li>
+<li><a href="#">|</a></li>
+
+
+
+<li><a href="https://twitter.com/senaicotia" target="_blank"><i
+class="fab fa-linkedin"></i></a></li>
+
+
+
+<li><a href="#">|</a></li>
+<li><a href="https://www.instagram.com/senaicotia/"
+target="_blank"><i class="fab fa-instagram"></i></a></li>
+
+
+
+
+
+</ul>
+</div>
+
+
+
+
+</div>
+<div class="navbar">
+
+
+
+<div class="logo">
+<img src="img//logo.png">
+</div>
+<div class="nav-links">
+<ul class="links">
+<li><a href="/Inicio">Inicio</a></li>
+
+
+
+
+<li><a href="/ManualPt1">Manual do Auditório</a></li>
+
+
+
+
+<li th:if="${session.usuarioLogado == null}"><a href="/loginUsuario"
+th:if="${session.usuarioLogado == null}">Login</a> <i
+class='bx bxs-chevron-down icon icon-css'></i>
+<ul class="adm-sub-menu sub-menu">
+<li><a href="pagLogin">Administrador</a></li>
+
+
+
+</ul></li>
+
+
+
+<li><a href="/logout" th:if="${session.usuarioLogado != null}">Sair</a>
+
+
+
+</li>
+</ul>
+</div>
+
+
+
+</div>
+</nav>
+<!-- -->
+<form action="cadastroReserva">
+<div id="form">
+<input type="hidden" name="usuario.idUsuario"
+th:value="${session.usuarioLogado.idUsuario}">
+
+
+
+ <div class="container-form">
+                <div>
+                    <img class="imagemzinha" src="img/logo.png" alt="">
+                </div>
+                <label style="color:#000;" class="t">Título do evento:</label> <img src="img/lapis.png"
+                    class="calendar test"> <input id="eventTitleInput"
+                    name="tituloEvento" type="text"
+                    th:value="${reserva?.tituloEvento}" required placeholder="Título" /> <label style="color:#000;" class="t">Descrição:</label>
+                <img src="img/editar.png" class="calendar test"> <input
+                    type="text" name="descricao" id="descricao"
+                    th:value="${reserva?.descricao}" required placeholder="Descrição"/> <img src="img/relogioReserva.png"
+                    class="calendar"> <label style="color:#000;" class="p">Período:</label> <br>
+                <label> <input type="checkbox" name="manha" class="checkbox"  />
+                    <span style="color:#000;">Manhã</span>
+                </label> <label> <input  type="checkbox" name="tarde"
+                    class="checkbox" /> <span style="color:#000;">Tarde</span>
+                    
+                </label> <label> <input type="checkbox" name="noite"
+                    class="checkbox" /> <span style="color:#000;">Noite</span>
+                </label>
+                <br>
+                <span style="font-size:12px; margin-left: 10px; margin-right: 20px;">08:00 - 12:00</span> <span style="font-size:12px; margin-right: 20px;">13:00 - 16:00</span> <span style="font-size:12px; margin-right: 20px;">18:00 - 22:00</span>
+                 <br> <label style="color:#000;" class="t">Data</label> <img src="img/calendario.png"
+                    class="calendar test"> <input type="date" name="dataEvento"
+                    id="data" th:value="${reserva?.dataEvento}" required />
+            </div>
+
+
+<div>
+<!-- onclick="openLoginForm()"> -->
+<button id="saveButton" type="submit">Reservar</button>
+</div>
+
+
+
+
+
+
+
+<input type="hidden" id="cancelButton">
+
+
+
+</div>
+</form>
+
+
+
+<div id="container">
+
+
+
+<div id="container2">
+<div id="c3">
+<div id="header">
+
+
+
+
+<div class="botoesEdisplay">
+<button id="backButton">
+<img src="img/setaEsquerda.png">
+</button>
+<div id="mesDisplay"></div>
+<button id="nextButton">
+<img src="img/setaDireita.png">
+</button>
+</div>
+</div>
+
+
+
+<div id="weekdays">
+<div>DOM</div>
+<div>SEG</div>
+<div>TER</div>
+<div>QUA</div>
+<div>QUI</div>
+<div>SEX</div>
+<div>SAB</div>
+</div>
+
+
+
+<div id="calendar"></div>
+</div>
+
+
+<button id="saveButton2" type="submit">
+<a href="/listaReservaUsuario/1">Reserva</a>
+</div>
+
+
+
+<br>
+<div id="monthDisplay"></div>
+<div class="screen-background">
+<span class="screen-background-shape screen-background-shape4"></span>
+<span class="screen-background-shape screen-background-shape3"></span>
+<span class="screen-background-shape screen-background-shape2"></span>
+<span class="screen-background-shape screen-background-shape1"></span>
+</div>
+
+
+
+</div>
+
+
+
+<div id="deleteEventModal">
+<h2>Event</h2>
+<p id="eventText"></p>
+
+
+
+<button id="deleteButton">Delete</button>
+<button id="closeButton">Close</button>
+</div>
+
+
+
+
+<div id="modalBackDrop"></div>
+
+
+
+<section class="form-section">
+<div class="form-wrapper">
+<form>
+<div class="input-block"></div>
+<div class="input-block"></div>
+<button class="btn-login"></button>
+</form>
+</div>
+</section>
+
+
+
+
+<ul class="squares"></ul>
+
+
+
+<script src="js/scriptEfeito.js"></script>
+<script src="js/reserva.js"></script>
+
+
+
+
+</body>
+</html>

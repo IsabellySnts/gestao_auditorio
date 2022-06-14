@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sucesso.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <title>Senai | Sucesso</title>
+</head>
+
+<body>
+    <div class="inicio">
+        <h1 class="texto" style="font-size: 250px;">Sucesso</h1>
+        <h1 class="texto" style="margin-left: 31%; margin-top: 30%; font-size: 45px;">Reserva cadastrada com sucesso!!!
+        </h1>
+        <img class="fundo" src="img/fundooo.png">
+    </div>
+    <div class="descricao">
+        <div class="container-escrita">
+            <div class="quebra">
+                <table class="highlight">
+            <thead>
+                <tr>
+            <th>Id</th>
+			<th>Titulo Reserva</th>
+			<th>Descrição da Reserva</th>
+			<th>Data da Reserva</th>
+			<th>Manhã</th>
+			<th>Tarde</th>
+			<th>Noite</th>
+			<th>Feito por: </th>
+			
+			
+                </tr>
+            </thead >
+            <tbody class="tb-content" >
+            <tr th:each="r:${reserva}" >
+			<td th:text="${r.idReserva}" />
+			<td th:text="${r.tituloEvento}"/>
+			<td th:text="${r.descricao}"/>
+			<td th:text="${#dates.format(r.dataEvento.time, 'dd-MM-yyyy')}"/>
+			<td th:text="${r.manha ? 'Indisponivel'  : 'Disponivel'}" th:class="${r.manha ? '' : 'green'}"  />
+			<td th:text="${r.tarde ? 'Indisponivel'  : 'Disponivel'}" th:class="${r.tarde ? '' : 'green'}"/>
+			<td th:text="${r.noite ? 'Indisponivel'  : 'Disponivel'}" th:class="${r.noite ? '' : 'green'}" />
+			<td th:text="${r.usuario?.nome}"/>
+			
+
+		</tr>
+            </tbody>
+        </table>
+            </div>
+            <h2 style="margin-top: 20%;  font-size:  1.9rem; ">Para finalizar sua reserva, envie a mensagem de confirmação
+                para o nosso gestor</h2>
+        </div>
+        <div class="middle">
+            <a href="https://wa.me/5511992794326?text=Olá, acabou de ser realizada uma reserva no auditório." target="_blank" class="btn btn3">Finalizar</a>
+         <a href="/Inicio" target="_blank" class="btn btn2">Voltar</a>
+        </div>
+        
+    </div>
+    <footer>
+        <h4 class="footer" style="text-align:center; padding-top: 15px; color: #fff;">Criado por DEBS © 2022 Todos os direitos
+            reservados.</h4>
+    </footer>
+</body>
+
+</html>

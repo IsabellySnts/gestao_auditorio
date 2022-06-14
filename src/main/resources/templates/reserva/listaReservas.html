@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+
+ <meta charset="UTF-8">
+   
+    <link rel="icon" href="/img/icone_senai.png">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/ca14b9e588.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Senai | Lista Reservas</title>
+
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+.searchh{ 
+	border: none;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 58%;
+    margin-top: 10px;
+}
+
+.search { 
+    border: none;
+    right: 280px;
+    right: 15%;
+    height: 30px;
+    width: 24px;
+    cursor: pointer;
+}
+
+#footer #niveis, #footer #niveis2, #footer #niveis3, #footer #niveis4 {
+    padding: 20px 20px 20px 20px;
+    position: absolute;
+    top: 94%;
+    width: 100%;
+    left: 0;
+}
+
+#footer .nivel4 {
+    background-color: #B70407;
+    text-align: center;
+}
+
+#footer .nivel4 p {
+    color: #FFFFFF;
+    display: inline;
+    font-size: 13px;
+}
+
+</style>
+<style>
+body{
+    background-color: rgb(243, 237, 237);
+}
+.pagination {
+    position: absolute;
+    margin-top: 5%;
+    left: 45%;
+    background-color: rgb(243, 237, 237);
+}
+.page-footer{
+    position: absolute;
+    top: 92.8%;
+    width:100%;
+}
+@media screen and (max-width: 900px){
+footer{
+    position: fixed;
+    bottom: 0px;
+}
+.main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.main-content .box{
+    margin: 5px 0;
+}
+}
+
+.cont{
+    display: flex;
+    margin-left: 25em;
+}
+
+.cont .estatico{
+    color: #000;
+    font-size: 60px;
+    font-weight: 500;
+    
+
+}
+
+.cont .dinamico{
+    margin-left: 15px;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.dinamico li{
+    color: #cc0000;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    left: 0;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4) infinite;
+}
+
+@keyframes slide {
+    100%{
+        top: -360px;
+
+    }
+}
+
+.dinamico li span{
+    position: relative;
+}
+
+.dinamico li span::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    border-left: 2px solid #fc6d6d;
+    animation: typing 1.5s steps(10) infinite;
+}
+
+@keyframes typing{
+    100%{
+        left: 100%;;
+        margin: 0 -35px 0 -35px;
+    }
+}
+
+</style>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    z-index: 1000;
+
+}
+
+nav .innav{
+    height: 2em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    font-size: 15px;
+    background: #cc0000;
+    
+    
+}
+
+nav .innav .nav-instituicoes{
+    height: 100%;
+    line-height: 70px;
+    margin-left: 70em;
+}
+
+nav .innav .nav-instituicoes .links{
+    height: 100%;
+    line-height: 30px;
+    
+}
+
+nav .innav .nav-instituicoes .links{
+    display: flex;
+   
+}
+
+nav .innav .nav-instituicoes .links li{
+    list-style: none;
+    position: relative;
+    display: flex;
+    float: right;
+    padding: 0 14px;
+}
+
+
+nav .innav .nav-instituicoes .links li{
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+}
+
+nav .innav .nav-instituicoes .links li a:hover{
+    color: #940909;
+    
+}
+
+nav .innav .nav-instituicoes .links li a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    white-space: nowrap;
+    height: 100%;
+}
+
+nav .navbar{
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 190px;
+    border-bottom: 1px solid #cc0000;
+    background-color: #fff;
+
+}
+
+nav .navbar .logo img {
+    width: 170px;
+ 	
+}
+
+nav .navbar .nav-links{
+    height: 100%;
+    line-height: 70px;
+}
+
+nav .navbar .nav-links .links{
+    display: flex;
+}
+
+nav .navbar .nav-links .links li{
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+}
+
+nav .navbar .nav-links .links li a{
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+    height: 100%;   
+}
+
+nav .navbar .nav-links .links li .icon{
+    color: #000;
+    height: 100%;
+    width: 22px;
+    text-align: center;
+    line-height: 70px;
+    transition: all 0.3s ease;
+}
+
+nav .navbar .nav-links .links li:hover .icon-css, 
+nav .navbar .nav-links .links li:hover .icon-js{
+
+    transform: rotate(180deg);
+
+}
+
+.navbar .nav-links .links .sub-menu {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    background-color: #fff;
+    line-height: 40px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    
+}
+
+.navbar .nav-links .links .sub-menu li:hover{
+
+    background-color: #fcebeb;
+}
+
+
+.navbar .nav-links .links .sub-menu li{
+    padding: 0 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: #000 1px solid;
+}
+.navbar .nav-links .links .sub-menu li a{
+    font-size: 16px;
+    font: 500;
+}
+
+nav .navbar .nav-links .links li:hover .adm-sub-menu,
+nav .navbar .nav-links .links li:hover .clinica-sub-menu{
+    display: block;
+}
+
+.pagination li.active a {
+    background: #e70609;
+    color: #fff;
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+    background-color: transparent;
+    border-bottom: 1px solid #9e9e9e;
+    width: 100%;
+    font-size: 16px;
+    }
+</style>
+
+<body>
+
+	<nav>
+
+			<div class="innav">
+	
+				<div class="nav-instituicoes">
+					<ul class="links">
+						<li>
+							<a href="#">FIESP</a>
+						</li>
+						<li>
+							<a href="#">CIESP</a>
+						</li>
+						<li>
+							<a href="#">SESI</a>
+						</li>
+						<li>
+							<a href="#">SENAI</a>
+						</li>
+						<li>
+							<a href="#">IRS</a>
+						</li>
+
+					</ul>
+			</div>
+			
+			
+			</div>
+			<div class="navbar">
+	
+				<div class="logo" style="margin-top: 25px;">
+					<img src="/img/logo.png">
+				</div>
+				<div class="nav-links">
+					<ul class="links">
+						<li>
+							<a href="/Inicio">Inicio</a>
+						</li>
+					   
+						
+						<li>
+							<a href="/ManualPt1">Manual do Auditório</a>
+						   
+						</li>
+					
+						<li>
+							<a href="/listarUsuarios/1">Lista Usuarios</a>
+						   
+						</li>
+	
+						<li th:if="${session.admLogado == null}">
+						<a href="/loginUsuario" th:if="${session.admLogado == null}" >Login</a>
+							<i class='bx bxs-chevron-down icon icon-css'></i>
+							<ul class="adm-sub-menu sub-menu">
+								<li>
+									<a href="/pagLogin">Administrador</a>
+								</li>
+							   
+							</ul>
+						   
+						</li>
+	
+						<li>
+						<a href="/logout" th:if="${session.admLogado != null}">Sair</a>
+						   
+						</li>
+					</ul>
+				</div>
+	
+			</div>
+		</nav>
+
+         <div style="margin-top: 190px; " class="container">
+         <img class="searchh" src="/img/search.png">
+              <form action="/buscarData"> <input type="search" name="dataEvento" class="search" placeholder="Procurar por dia, mês e ano"> </form>
+     
+     	<div class="cont">
+        <div class="estatico">Lista </div>
+        <ul class="dinamico">
+            <li><span>de Eventos</span></li>
+            <li><span>Senai Cotia</span></li>
+        </ul>
+   		 </div>
+     
+     
+        <table class="highlight">
+            <thead>
+                <tr>
+            <th>Id</th>
+			<th>Titulo Reserva</th>
+			<th>Descrição da Reserva</th>
+			<th>Data da Reserva</th>
+			<th>Manhã</th>
+			<th>Tarde</th>
+			<th>Noite</th>
+			<th>Feito por: </th>
+			
+			
+                </tr>
+            </thead >
+            <tbody class="tb-content" >
+            <tr th:each="r:${reserva}" >
+			<td th:text="${r.idReserva}" />
+			<td th:text="${r.tituloEvento}"/>
+			<td th:text="${r.descricao}"/>
+			<td th:text="${#dates.format(r.dataEvento.time, 'dd-MM-yyyy')}"/>
+			<td th:text="${r.manha ? 'Indisponivel'  : 'Disponivel'}"  />
+			<td th:text="${r.tarde ? 'Indisponivel'  : 'Disponivel'}" />
+			<td th:text="${r.noite ? 'Indisponivel'  : 'Disponivel'}"  />
+			<td th:text="${r.usuario?.nome}"/>
+			
+
+		</tr>
+            </tbody>
+        </table>
+				 <ul class="pagination">
+            <li th:class="${paginaAtual == 1 ? 'disabled' : ''}"><a
+                    th:href="${paginaAtual > 1 ? paginaAtual - 1 : '#'}"><i class="material-icons">chevron_left</i></a>
+            </li>
+            <li th:each="p:${numPaginas}" th:class="${paginaAtual == p ? 'active' : 'waves-effect'}"><a
+                    th:href="${p}"><span th:text="${p}"></span></a></li>
+            <li th:class="${paginaAtual == totalPaginas ? 'disabled' : 'waves-effect'}">
+                <a th:href="${paginaAtual <totalPaginas ? paginaAtual+1 :'#'}">
+                    <i class="material-icons">chevron_right</i>
+                </a>
+            </li>
+        </ul>
+				</div>
+			
+
+     <footer id="footer">
+        <div id="niveis4" class="nivel4">
+        	<div class="content_footer">
+	        	<p>Criado por DEBS &copy; 2022 Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("passou aqui");
+            $(".dropdown-trigger").dropdown();
+        });
+    </script>
+
+</body>
+</html>
+           
+        
+		
+

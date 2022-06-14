@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#e51e2a;
+    clip-path: circle(70% at right -20%);
+}
+  header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease-in;
+}
+header .logo{
+    position: relative;
+    max-width: 235px;
+}
+
+.logo-senai {
+  width: 150px;
+}
+
+header .navigation .navigation-items a {
+  position: relative;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before {
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before{
+  width: 100%;
+}
+
+
+header .navigation{
+    position: relative;
+    display: flex;
+}
+header .navigation li{
+    list-style: none;
+    color: rgb(255, 255, 255);
+
+}
+header .navigation li a{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-weight: 900;
+    font-size: 25px;
+    text-decoration: none;
+    margin-left:40px ;
+}
+
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+}
+.content .textBox{
+    position: relative;
+    max-width: 600px;
+    margin-right: 20px;
+
+}
+.content .textBox h2{
+    color: rgb(0, 0, 0);
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+    font-weight: 800;
+}
+.content .textBox p{
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+}
+.content .textBox a{
+    display: inline-block;
+    margin-top: 100px;
+    padding: 8px 20px;
+    background: #e51e2a;
+    color: rgb(255, 255, 255);
+    border-radius: 40px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-weight: 50px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.sci{
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sci li{
+    list-style: none;
+    padding: 10px;
+}
+.sci li a{
+    display: inline-block;
+    margin-left: 15px;
+    background: rgb(0, 0, 0);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 0.2 ease-in-out;
+}
+.sci li a:hover{
+    background: #e51e2a;
+    transform: translateY(-10px);
+}
+.sci li a img{
+    filter: invert(1);
+    transform: scale(0.5);
+}
+.content .imgBox{
+    width: 500px;
+    display: flex;
+    justify-content: flex-end;
+}
+.content .imgBox img{
+    max-width: 420px;
+}
+.container{
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+}
+img{
+    animation: flutuacao 10s
+    ease-in-out infinite;
+    max-width: 550px;
+    margin: 10px;
+    
+}
+@keyframes flutuacao{
+    0%, 100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform: translateteY(-120);
+    }
+}
+
+
+@media(max-width: 991px){
+    .sci li a img
+
+    header{
+        padding: 40px;
+    }
+    .sci li a img
+
+    section{
+        padding: 150px 40px;
+    }
+    .sci li a img
+
+    .sci img{
+        left: 40px;
+    }
+    .content   .sci li a img{
+        flex-direction: column;
+    }
+    .sci li a
+    .content .textBox
+    .content .imgBox{
+        max-width: 100% ;
+    }
+    .sci li a
+    .navigation{
+        display: none;
+
+    }
+    header .navigation{
+        display: none;
+
+    }.toggle{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url(menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        z-index: 10000;
+    }
+}
+
+@keyframes move {
+    from {
+      opacity: 0;
+      transform: translateX(-35%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  
+  
+  @keyframes down {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100vh);
+    }
+  }
+  
+  /* FORM NO-NO */
+  
+  form.validate-error {
+    animation: nono 200ms linear, fade paused;
+    animation-iteration-count: 2;
+  }
+  
+  @keyframes nono {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    35% {
+      transform: translateX(-15%);
+    }
+    70% {
+      transform: translateX(15%);
+    }
+  }
+  
+  
+  .squares li {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 0, 0, 0.5);
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    animation: up 2s infinite alternate;
+    z-index:-1
+  }
+  
+  @keyframes up {
+    from {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-800px) rotate(960deg);
+    }
+  }
+  
+

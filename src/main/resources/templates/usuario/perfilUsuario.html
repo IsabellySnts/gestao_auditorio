@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		    <link rel="icon" href="img/senai-logo.jpeg">
+		
+	
+<title>Senai | Perfil Usuario</title>
+</head>
+<body>
+        <table>
+        <thead>
+          <tr>
+              <th>ID</th>
+				<th>Nome</th>
+				<th>E-mail</th>
+				<th>Telefone</th>
+				<th>Alterar</th>
+				<th>Excluir</th>
+          </tr>
+        </thead>
+
+        <tr th:each="user:${session.usuarioLogado}">
+				<td th:text="${user.idUsuario}"></td>
+				<td th:text="${user.nome}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.telefone}"></td>
+				<td><a th:href="@{/alterarUsuario(idUsuario=${user.idUsuario})}">Alterar</a></td>
+				<td><a th:href="@{/excluirUsuario(idUsuario=${user.idUsuario})}">Excluir</a></td>
+				<td></td>
+				
+				
+			</tr>
+      </table>        
+             
+		
+	
+</body>
+</html>

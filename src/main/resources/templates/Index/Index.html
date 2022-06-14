@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icone_senai.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style_footer.css">
+     <link rel="stylesheet" href="css/popup.css">
+     <link rel="stylesheet" href="css/styleModalC.css">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/feed_instagram.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/scroll_button.css">
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/style_cursos.css">
+    <script src="https://kit.fontawesome.com/ca14b9e588.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <title>Portal SENAI-SP - Cotia</title>
+</head>
+
+<style>
+    .whats{
+        position: fixed;
+        bottom: 110px;
+        right: 35px;
+        z-index: 9999;
+    }
+    </style>
+
+<body>
+
+    <header>
+<a href="pagLogin" class="brand">
+<span class="tooltiptext">Área do Administrador</span>
+<img class="logo-senai" src="img/senai-logo.jpeg" alt="">
+</a>
+<div>
+<img class="menu-btn" src="img/menu.png" alt="">
+</div>
+<div class="navigation">
+<div class="navigation-items">
+<div class="fechar">
+<img onclick="fechar()" src="img/icone_fechar.png" style="width: 10px;"></div>
+<a href="#">Início</a>
+<a href="formReserva" th:if="${session.usuarioLogado != null}" >Agendar</a>
+<a th:if="${session.usuarioLogado != null}" href="/listaReserva/1">Lista Reserva</a>
+<a href="ManualPt1">Manual do auditório</a>
+<a href="loginUsuario" th:if="${session.usuarioLogado == null}" >Login</a>
+<a href="logout" th:if="${session.usuarioLogado != null}">Sair</a>
+<a th:if="${session.usuarioLogado != null}" onclick=openLoginForm() >Perfil</a>
+<a href="cadastroUsuario">Cadastro</a>
+
+</div>
+</div>
+</header>
+    
+<section class="home">
+        <video class="video-slide active" src="videos/frente_senai.mp4" autoplay muted
+            loop></video>
+        <video class="video-slide" src="videos/video_biblioteca.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videos/WhatsApp Video 2022-05-08 at 12.47.38.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videos/VID_20220510_142042496.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videos/VID_20220510_142238433.mp4" autoplay muted loop></video>
+
+        <div class="content active">
+            <h1>SENAI COTIA<br><span>Agendamentos do Auditório</span></h1>
+            <p>A finalidade desse projeto desenvolvido é ajudar a melhorar o agendamento de reservas
+                do Senai, colaborando com planejamento e organização de eventos e aulas,
+                a estrutura do projeto é simples, eficaz e objetiva. Com ele os administradores
+                terão acesso dos horários, dias e eventos.</p>
+            <a href="loginUsuario">Login</a>
+        </div>
+        <div class="content">
+            <h1>SENAI COTIA<br><span>Agendamentos do Auditório</span></h1>
+            <p>A finalidade desse projeto desenvolvido é ajudar a melhorar as instalações
+                do Senai, colaborando com planejamento e organização de eventos e aulas,
+                a estrutura do projeto é simples, eficaz e objetiva. Com ele os administradores
+                terão acesso dos horários, dias e eventos.</p>
+            <a href="#">Login</a>
+        </div>
+        <div class="content">
+            <h1>SENAI COTIA<br><span>Agendamentos do Auditório</span></h1>
+            <p>A finalidade desse projeto desenvolvido é ajudar a melhorar as instalações
+                do Senai, colaborando com planejamento e organização de eventos e aulas,
+                a estrutura do projeto é simples, eficaz e objetiva. Com ele os administradores
+                terão acesso dos horários, dias e eventos.</p>
+            <a href="#">Login</a>
+        </div>
+        <div class="content">
+            <h1>SENAI COTIA<br><span>Agendamentos do Auditório</span></h1>
+            <p>A finalidade desse projeto desenvolvido é ajudar a melhorar as instalações
+                do Senai, colaborando com planejamento e organização de eventos e aulas,
+                a estrutura do projeto é simples, eficaz e objetiva. Com ele os administradores
+                terão acesso dos horários, dias e eventos.</p>
+            <a href="#">Login</a>
+        </div>
+        <div class="content">
+            <h1>SENAI COTIA<br><span>Agendamentos do Auditório</span></h1>
+            <p>A finalidade desse projeto desenvolvido é ajudar a melhorar as instalações
+                do Senai, colaborando com planejamento e organização de eventos e aulas,
+                a estrutura do projeto é simples, eficaz e objetiva. Com ele os administradores
+                terão acesso dos horários, dias e eventos.</p>
+            <a href="#">Login</a>
+        </div>
+        <div class="media-icons">
+            <a href="https://pt-br.facebook.com/senaicotia/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/senaicotia/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/senaicotia" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <div class="esfumado"></div>
+
+    <div class="faixa"></div>
+
+    <div class="fundo" style="background-image: url(img/senai_fundo.jpg);">
+    <div class="feed-insta" style="z-index: 1000;">
+    <br><br>
+        <h1 style="color: #fff; text-align:center;">Instagram Feed</h1>
+         <br><br>
+        <div id="instafeed" style="bottom: 100px;"></div>
+    </div>
+</div>
+
+<div class="inf-senai">
+    <img class="pontinho" src="img/pontinhos_vermelhos.png">
+    <h1 class="anime" style="color: #000; font-family: 'Montserrat', sans-serif; text-align: center; margin: 50px; font-weight: bold; background-color: #fff;">SENAI - Ricardo Lerner</h1>
+    <div class="anime tracinho"></div>
+    <p class="anime" style="color: #000; font-family: 'Montserrat', sans-serif; text-align: justify; margin-left: 20%; margin-right: 20%; margin-top: 107px; line-height: 1.6;">Fundada em 25 de maio de 2018, a Escola SENAI “Ricardo Lerner”, está localizada a 1,1 Km da Rodovia Raposo Tavares e a 1,8 Km .Faz divisa com a Escola Estadual Professor Ary Bouzan , a área de abrangência do SENAI de Cotia inclui os seguintes municípios: Cotia, Embu-Guaçu, Juquitiba, São Lourenço da Serra e Vargem Grande Paulista.
+        A Escola SENAI “Ricardo Lerner” se faz presente na indústria o por meio de seus alunos concluintes dos cursos de Aprendizagem Industrial, Cursos Técnicos, Vivência Profissional, Cursos de Formação Inicial e Continuada e, ainda, pela Capacitação de tutores das empresas mantenedoras de aprendizes.
+        Também são colocados à disposição das indústrias, todos os recursos do SENAI como sua rede de laboratórios, Unidades Móveis, Cursos in Company, Edital de Inovação, além da adequação da sua oferta regular para o atendimento de demandas da região em que está instalada. Skaf disse ao inaugurar a nova unidade do Senai-SP “Esta escola tem Ricardo Lerner como patrono porque ele é um bom exemplo a ser seguido”.
+        </p>
+        <img class="pontinho2" src="img/pontinhos_vermelhos.png">
+</div>
+
+<div class="fundo3" style="background-image: url(img/senai_fundo.jpg);"></div>
+
+<div class="inf-senai2">
+    <img class="pontinho" src="img/pontinhos_vermelhos.png">
+    <div class="slide">
+        <div class="slides">
+            <div id="voltar" class="btn">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div id="next" class="btn">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+
+            <div id="atual" class="image">
+                <img src="img/0.png" alt="">
+            </div>
+            <div class="image">
+                <img src="img/1.png" alt="">
+            </div>
+            <div class="image">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="image">
+                <img src="img/3.png" alt="">
+            </div>
+        </div>
+        <div class="balls">
+            <div class="imgAtual" id='0'></div>
+            <div id="1"></div>
+            <div id="2"></div>
+            <div id="3"></div>
+        </div>
+    </div>
+    <img class="pontinho3" src="img/pontinhos_vermelhos.png">
+</div>
+
+<div class="fundo2" style="background-color: #E6E6E6;">
+    <h1 style="text-align: center;">Cursos</h1>
+    <img style="width: 55px; height: 40px; margin-left:48.6%;" src="img/icone_cursos.PNG">
+    
+    <div id="cursos">
+        <div class="container pt-3" id="oqEstabuscando">
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1">
+                    <ul class="row list-unstyled pt-5">
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a class="row m-0 mb-3 item-reversed" href="https://www.sp.senai.br/cursos">
+                                <div class="d-none col-md-6 d-md-flex justify-content-center align-items-center">
+                                    <img style="margin-left: 50%;" src="img/icon-pesquisa-localidade.svg" alt="Pesquisar Todos">
+                                    <div class="col-12 col-md-6 d-flex align-items-center pl-4 pl-md-1">
+                                        <span style="margin-left: 100%;">Pesquisar Todos</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/administracao-e-gestao" class="row m-0 mb-3">
+                                <div class="d-none col-md-6 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-administracao.svg" alt="Administração e Gestão">
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Administração e Gestão</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/alimentos-e-bebidas" class="row m-0 mb-3">
+                                <div class="d-none col-md-6 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-alimentos.svg" alt="Alimentos e Bebidas">
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Alimentos e Bebidas</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/construcao-civil-e-design-de-mobiliario" class="row m-0 mb-3">
+                                <div class="d-none col-md-6 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-construcao.svg" alt="Construção Civil e Design de Mobiliário">
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Construção Civil e Design de Mobiliário</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/design-de-moda-textil-vestuario-calcados-e-joalheria" class="row m-0 mb-3">
+                                <div class="d-none col-md-6 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-design.svg" alt="Design de Moda, Têxtil, Vestuário, Calçados e Joalheria">
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>
+                                        Design de Moda, Têxtil, Vestuário, Calçados e
+                                        Joalheria
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/design-grafico-papel-celulose-grafica-e-editorial" class="row m-0 mb-3">
+                                <div class="d-none col-md-6 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-papel.svg" alt="Design Gráfico, Papel, Celulose, Gráfica e Editorial">
+                                </div>
+                                <div class="col-12 col-md-6 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>
+                                        Design Gráfico, Papel, Celulose, Gráfica e
+                                        Editorial
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/fabricacao-mecanica-e-mecanica-industrial" class="row m-0 mb-3">
+                                <div class="d-none col-md-4 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-fabricacao.svg" alt="Fabricação Mecânica e Manutenção Industrial">
+                                </div>
+                                <div class="col-12 col-md-8 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Fabricação Mecânica e Manutenção Industrial</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/logistica-e-transporte" class="row m-0 mb-3">
+                                <div class="d-none col-md-4 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-logistica.svg" alt="Logística e Transporte">
+                                </div>
+                                <div class="col-12 col-md-8 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Logística e Transporte</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/mecanica-automotiva" class="row m-0 mb-3">
+                                <div class="d-none col-md-4 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-mecanica.svg" alt="Mecânica Automotiva">
+                                </div>
+                                <div class="col-12 col-md-8 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Mecânica Automotiva</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/mecatronica-sistemas-de-automacao-energia-e-eletronica" class="row m-0 mb-3">
+                                <div class="d-none col-md-4 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-eletronica.svg" alt="Mecatrônica, Sistemas de Automação, Energia e Eletrônica">
+                                </div>
+                                <div class="col-12 col-md-8 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>
+                                        Mecatrônica, Sistemas de Automação, Energia e
+                                        Eletrônica
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/meio-ambiente-saude-e-seguranca-do-trabalho" class="row m-0 mb-3">
+                                <div class="d-none col-md-4 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-infra.svg" alt="Meio Ambiente, Saúde e Segurança do Trabalho">
+                                </div>
+                                <div class="col-12 col-md-8 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Meio Ambiente, Saúde e Segurança do Trabalho</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/metalurgia-e-soldagem" class="row m-0 mb-3">
+                                <div class="d-none col-md-4 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-metalurgia.svg" alt="Metalurgia e Soldagem">
+                                </div>
+                                <div class="col-12 col-md-8 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Metalurgia e Soldagem</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/quimica-ceramica-e-plasticos" class="row m-0 mb-3">
+                                <div class="d-none col-md-4 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-quimica.svg" alt="Química, Cerâmica e Plásticos">
+                                </div>
+                                <div class="col-12 col-md-8 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Química, Cerâmica e Plásticos</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/refrigeracao-e-climatizacao" class="row m-0 mb-3">
+                                <div class="d-none col-md-4 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-refrigeracao.svg" alt="Refrigeração e Climatização">
+                                </div>
+                                <div class="col-12 col-md-8 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Refrigeração e Climatização</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-12 col-md-6 col-lg-4">
+                            <a href="https://www.sp.senai.br/cursos/0/tecnologia-da-informacao-e-informatica" class="row m-0 mb-3">
+                                <div class="d-none col-md-4 d-md-flex justify-content-center align-items-center">
+                                    <img aria-hidden="true" src="img/icon-tecnologia.svg" alt="Tecnologia da Informação e Informática">
+                                </div>
+                                <div class="col-12 col-md-8 d-flex align-items-center pl-4 pl-md-1">
+                                    <span>Tecnologia da Informação e Informática</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<button class="scrollTop" onclick="backTop();">
+    <img src="img/icone_subir.png">
+</button>
+
+<footer id="footer">
+    <div id="niveis2" class="nivel2">
+        <div class="content_footer">
+            <div class="coll">
+                <div class="newsletter">
+                    <a href="https://www.fiesp.com.br/cadastro/" target="_parent" title="Ir para: Cadastro">
+                        <img src="img/cadastro.png" alt="cadastro">
+                    </a>
+                </div>
+                <article class="rss"> </article>
+            </div>
+            <div class="bloco_enderecos">
+                <div class="enderecos">
+                    <p>Ricardo Lerner SENAI
+                        <a title="Clique aqui para saber como chegar" class="como-chegar"
+                            href="javascript:void(0);">Como chegar?</a>
+                        <br>
+                        <span class="fas fa-map-marker"></span>
+                        <span>R. Direita, 955 - Vila Santo Antônio, Cotia - SP 
+                            <br>
+                            <span class="fas fa-map-pin"></span>
+                            CEP 06708-280
+                            <br>
+                            <span class="fas fas fa-phone-alt"></span>
+                            Telefone: +55 (11) 4628-1600
+                            <br>
+                            <span class="fas fa-envelope"></span>
+                            E-mail:
+                            <a title="Fale com o nosso setor de relacionamento"
+                            href="mailto:atendimento138@sp.senai.br">atendimento138@sp.senai.br</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="niveis3" class="nivel3">
+        <div class="content_footer">
+            <ul class="sobre-fiesp">
+                <li class="fonte-branca"><a title="Mapa do Localização">Mapa de Localização</a></li>
+                    </ul>
+                <div class="informacoes">
+                    <p>"A Escola SENAI “Ricardo Lerner”, está localizada a 1,1 Km da Rodovia Raposo Tavares e a 1,8 Km (utilizando rota a pé) do CAT Olavo Egydio Setúbal, no endereço Rua Direita, 955 – Vila Santo Antônio – Cotia – SP CEP 06708-280, instalada em terreno de 40.446,75 m², sendo de 8.367,90 m² a área construída."</p>
+                </div>
+                    <div class="social">
+                        <a href="https://pt-br.facebook.com/senaicotia/" target="_blank"><span
+                                class="fab fa-facebook-f"></span></a>
+                        <a href="https://twitter.com/senaicotia" target="_blank"><span
+                                class="fab fa-twitter"></span></a>
+                        <a href="https://www.instagram.com/senaicotia/" target="_blank"><span
+                                class="fab fa-instagram"></span></a>
+                        <a href="https://www.youtube.com/channel/UC2oveu5CFZ6I9C_kM0Qbapw" target="_blank"><span
+                                class="fab fa-youtube"></span></a>
+                    </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="niveis4" class="nivel4">
+        <div class="content_footer">
+            <p>Criado por DEBS &copy; 2022 Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+    <div class="whats">
+        <a href=" https://wa.me/551146281600" target="_blank">
+            <img src="img/whats.png" width="50" alt="Fale conosco pelo WhatsApp" title="Fale conosco pelo WhatsApp" />
+        </a>
+    </div>
+
+
+<div class="popup-overlay"></div>
+<div class="popup">
+<div class="popup-close" onclick=closeLoginForm()>&times;</div>
+<div class="form">
+<div class="avatar">
+<img src="img/perfil.png" alt="">
+</div>
+<div class="header">
+Informações Pessoais
+</div>
+
+
+
+<div class="element-info">
+
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>E-mail</th>
+<th>Telefone</th>
+
+</thead>
+<tr th:each="user:${session.usuarioLogado}" >
+<td style="padding-left:30px; padding-top: 15px;" th:text="${user.nome}"></td>
+<td style="padding-left:30px; padding-top: 15px;" th:text="${user.email}"></td>
+<td style="padding-left:30px; padding-top: 15px;" th:text="${user.telefone}"></td>
+
+</tr>
+</table>
+</div>
+
+<div class="element-icon">
+<table style="position: fixed;">
+
+<tr th:each="user:${session.usuarioLogado}">
+
+<td><a class="busca" th:href="@{/buscarReservas(id=${user.idUsuario})}">Minhas Reservas</a></td>
+<td><a th:href="@{/alterarUsuario(idUsuario=${user.idUsuario})}"><i class="large material-icons" style="font-size: 2em; color:#cc0000">editar</i></a></td>
+<td><a th:href="@{/excluirUsuario(idUsuario=${user.idUsuario})}"><i class="large material-icons" style="font-size: 2em; color:#cc0000">delete_sweep</i></a></td>
+
+
+
+
+
+
+</tr>
+</table>
+</div>
+</div>
+</div>
+
+
+
+ 
+
+<script src="js/popup.js"></script>
+    <script>
+        var balls = document.querySelector('.balls')
+        var quant = document.querySelectorAll('.slides .image')
+        var atual = 0
+        var imagem = document.getElementById('atual')
+        var next = document.getElementById('next')
+        var voltar = document.getElementById('voltar')
+        var rolar = true
+    
+        /* for(let i=0; i < quant.length; i++){
+            var div = document.createElement('div')
+            div.id = 1
+            balls.appendChild(div)
+        } */
+        document.getElementById('0').classList.add('imgAtual')
+    
+        var pos = document.querySelectorAll('.balls div')
+    
+        for(let i=0; i< pos.length; i++){
+            pos[i].addEventListener('click', ()=>{
+                atual = pos[i].id
+                rolar = false
+                slide()
+            })
+        }
+    
+        voltar.addEventListener('click', ()=>{
+            atual--
+            rolar = false
+            slide()
+        })
+        next.addEventListener('click', ()=>{
+            atual++
+            rolar = false
+            slide()
+        })
+    
+        function slide() {
+            if(atual >= quant.length) {
+                atual = 0
+            }
+            else if(atual < 0){
+                atual = quant.length-1
+            }
+            document.querySelector('.imgAtual').classList.remove('imgAtual')
+            imagem.style.marginLeft = -1024*atual+'px'
+            document.getElementById(atual).classList.add('imgAtual')
+        }
+        setInterval(()=>{
+            if(rolar){
+                atual++
+                slide()
+            }
+            else{
+                rolar = true
+            }
+        },4000)
+    </script>
+
+    <script type="text/javascript">
+
+
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function (manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+
+    </script>
+
+<script>
+    window.addEventListener('scroll',function(){
+        let scroll = document.querySelector('.scrollTop')
+        scroll.classList.toggle('active', window.scrollY > 450)
+    })
+
+    function backTop(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
+</script>
+
+<script type="text/javascript" src="js/instafeed.min.js"></script>
+
+
+
+<script type="text/javascript">
+    var feed = new Instafeed({
+      accessToken: 'IGQVJWRXB0eXdoVVJpYWxzTDc5Qml3cFVLNDVIVGttUVdMQXBFWGlINFpHbERfX21iWE91V2pmT1drYnd1UmV3czRhWlFlSjBrYzZAUZAEFuYlJPSDlYRWFudUZAoSGhMLVFHWEJJdmV4LTVubGg3RDN4RAZDZD',
+      limit: 4,
+      
+      template: '<div class="card-container"><div class="card"><div class="top"><div class="userDetails"><div class="profile_img"><img src="img/Senai.jpg" class="cover"></div><h3>senaiparacontato<br><span>Cotia, SP</span></h3></div><div><img src="img/dot.png" class="dot"></div></div><div class="imgBx"><a href="{{link}}"><img width="320" title="{{caption}}" src="{{image}}" /></a></div><div class="actionBtns"><div class="left"><img src="img/heart.png" class="heart" onclick="likeButton()"><img src="img/comment.png"><img src="img/share.png"></div><div class="right"><img src="img/bookmark.png"></div></div><h4 class="likes">3,684 likes</h4><h4 class="message"><b>senaiparacontato</b> Thanks for your love and supports <span>#cards</span> <span>#html</span> <span>#css</span></h4><h4 class="comments">View all 245 comments</h4><div class="addComments"><div class="userImg"><img src="img/Senai.jpg" class="cover"></div><input type="text" class="texto" placeholder="Add a comment..."></div><h5 class="postTime">4 hours ago</h5></div></div>',
+    });
+    feed.run();
+</script>
+
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
+    

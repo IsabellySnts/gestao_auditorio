@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senai | Manual</title>
+         <link rel="stylesheet" href="css/styleManual.css">
+    <link rel="stylesheet" href="style10.css">
+    <link rel="icon" href="img/MicrosoftTeams-image (5).png">
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="img/MicrosoftTeams-image (5).png" class="logo"></a>
+          <div class="toggle"></div>
+            <ul class="navigation">
+         
+                 <li> <a href="/Inicio">Início</a></li>
+<li><a href="/formReserva" th:if="${session.usuarioLogado != null}" >Agendar</a></li>
+<li><a href="/loginUsuario" th:if="${session.usuarioLogado == null}" >Login</a></li>
+<li><a href="/logout" th:if="${session.usuarioLogado != null}">Sair</a></li>
+<li><a href="/cadastroUsuario">Cadastro</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Ligando o DataShow</h2>
+<p>Para ligar o DataShow precione o botão vermelho onde está sendo indicado.</p>
+                </p>
+                <a href="manual9">Passo anterior</a>
+                <a href="manual11">Próximo passo</a>
+            </div>
+          
+    </div>
+    <div class="imgBox" >
+        <div class="container"> <img src="img/dataShow.png" style="border-radius: 10px;"></div>
+</div>
+        <ul class="sci">
+                  <li><a href="ManualPt1"><img src="img/u.png"></a></li>
+            <li><a href="manual2"><img src="img/2.png"></a></li>
+            <li><a href="manual3"><img src="img/t.png"></a></li>
+            <li><a href="manual4"><img src="img/4.png"></a></li>
+            <li><a href="manual5"><img src="img/5.png"></a></li>
+            <li><a href="manual6"><img src="img/6.png"></a></li>
+            <li><a href="manual7"><img src="img/7-.png"></a></li>
+            <li><a href="manual8"><img src="img/number-8.png"></a></li>
+            <li><a href="manual9"><img src="img/number-9.png"></a></li>
+            <li><a href="manual10"  style="background-color:red"><img src="img/ten.png"></a></li>
+            <li><a href="manual11"><img src="img/number-11.png"></a></li>
+        </ul>
+        <div class="form-wrapper">
+            <form>
+              <div class="input-block">
+                
+              </div>
+              <div class="input-block">
+                
+              </div>
+              <button class="btn-login"></button>
+            </form>
+          </div>
+    </section>
+    
+    <ul class="squares"></ul>
+<script src="js/quadrado.js"></script>
+    </section>
+</body>
+</html>

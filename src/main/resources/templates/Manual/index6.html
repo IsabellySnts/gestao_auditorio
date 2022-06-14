@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senai - Manual</title>
+         <link rel="stylesheet" href="css/styleManual.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/MicrosoftTeams-image (5).png">
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="img/MicrosoftTeams-image (5).png" class="logo"></a>
+          <div class="toggle"></div>
+            <ul class="navigation">
+             <li> <a href="/Inicio">Início</a></li>
+<li><a href="/formReserva" th:if="${session.usuarioLogado != null}" >Agendar</a></li>
+<li><a href="/loginUsuario" th:if="${session.usuarioLogado == null}" >Login</a></li>
+<li><a href="/logout" th:if="${session.usuarioLogado != null}">Sair</a></li>
+<li><a href="/cadastroUsuario">Cadastro</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Mesa de som</h2>
+                <p>Nos canais, existe um controle indicado como L e R. Ele é utilizado para indicar se o som daquele canal deve sair nas caixas de som internas, no foyer ou em ambas as caixas de som.<br>
+                    <br>
+                    Também existe o botão MUTE para cada um, caso seja necessário deixar o canal sem emitir som.<br><br> OBS: Não há necessidade de ajustar nenhum outro cotrole na mesa de som.<br>Todas as demais configurações já estão corretas.Por favor, não mexam.
+
+                </p>
+                <a href="manual5">Passo anterior</a>
+                <a href="manual7">Próximo passo</a>
+            </div>
+            <div class="imgBox" >
+                <div class="container"> <img src="img/hh.png" style="border-radius: 10px;" id="m"></div>
+      
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      
+      
+            </div>
+    </div>
+        <ul class="sci">
+              <li><a href="ManualPt1"><img src="img/u.png"></a></li>
+            <li><a href="manual2"><img src="img/2.png"></a></li>
+            <li><a href="manual3"><img src="img/t.png"></a></li>
+            <li><a href="manual4"><img src="img/4.png"></a></li>
+            <li><a href="manual5"><img src="img/5.png"></a></li>
+            <li><a href="manual6"  style="background-color:red"><img src="img/6.png"></a></li>
+            <li><a href="manual7"><img src="img/7-.png"></a></li>
+            <li><a href="manual8"><img src="img/number-8.png"></a></li>
+            <li><a href="manual9"><img src="img/number-9.png"></a></li>
+            <li><a href="manual10"><img src="img/ten.png"></a></li>
+            <li><a href="manual11"><img src="img/number-11.png"></a></li>
+        </ul>
+        <div class="form-wrapper">
+            <form>
+              <div class="input-block">
+                
+              </div>
+              <div class="input-block">
+                
+              </div>
+              <button class="btn-login"></button>
+            </form>
+          </div>
+    </section>
+    
+    <ul class="squares"></ul>
+<script src="js/quadrado.js"></script>
+    </section>
+</body>
+</html>

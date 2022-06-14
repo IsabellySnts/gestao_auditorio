@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+body{
+    font-family: "Open Sans";
+}
+
+.popup-overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.popup{
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.15);
+    width: 620px;
+    height: 466px;
+    background:#f5f5f5 ;
+    z-index: 1000;
+    opacity: 0;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+    transition:transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+body.showLoginForm .popup-overlay{
+    display: block;
+}
+body.showLoginForm .popup{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+
+}
+.popup .popup-close{
+     position: absolute;
+     top: -10px;
+     right: -10px;
+     width: 40px;
+     height:40px ;
+     border: 4px solid white;
+     background: #ec1c24;
+     color: #f5f5f5;
+     font-size: 25px;
+     font-weight: 600;
+     text-align: center;
+     border-radius: 50%;
+     cursor: pointer;
+     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .3);
+}
+.popup .form .avatar{
+    margin: 30px 0px 20px;
+    text-align: center;
+}
+.popup .form .avatar img{
+    width: 120px;
+    border-radius: 50%;
+}
+.popup .form .header{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    margin: 20px 0px;
+}
+.popup .form .element{
+    padding: 8px 20px;
+}
+.popup .form .element label{
+    display: block;
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 5px;
+}
+.popup .form .element input{
+    width: 100%;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #aaa;
+    background: #eee;
+    border-radius: 5px;
+}
+.popup .form .element button{
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #ec1c24;
+    color: #f5f5f5 ;
+}
+.element-icon{
+    margin-left: 10%;
+    margin-top: 70px;
+    
+}
+.element-info{
+    padding-left: 5%;
+    
+}
+thead th{
+    padding-left: 50px;
+  
+}
+
+th{
+    margin-bottom: 10px;
+    text-align: left;
+    
+}
+td{
+	margin-left:10px;
+}
+
+.busca{
+	color:white;
+	background-color: #cc0000;
+	border-radius: 20px;
+	margin-right:200px;
+	padding: 0.5em;
+	text-align: center;
+	
+}
+.busca:hover{
+	color:white;
+	background-color: #cc0000;
+	border-radius: 20px;
+	margin-right:200px;
+	padding: 0.5em;
+	text-align: center;
+	text-decoration: none;
+	
+}

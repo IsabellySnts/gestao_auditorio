@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(243, 237, 237);
+}
+.pagination {
+    position: absolute;
+    top: 85%;
+    left: 45%;
+    background-color: rgb(243, 237, 237);
+}
+.page-footer{
+    position: absolute;
+    top: 92.8%;
+    width:100%;
+}
+@media screen and (max-width: 900px){
+footer{
+    position: fixed;
+    bottom: 0px;
+}
+.main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.main-content .box{
+    margin: 5px 0;
+}
+}

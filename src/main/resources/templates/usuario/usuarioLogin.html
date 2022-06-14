@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/styleUsuario.css" rel="stylesheet">
+	<link href="css/Estilo.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/logadoModal.css">
+	<link href="css/loginUsuarioFooter.css" rel="stylesheet">
+	    <link rel="stylesheet" href="css/style_footer.css">
+	<link href="css/styleModal.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/loginUsuario.css">
+	<link rel="icon" href="/img/icone_senai.png">
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/ca14b9e588.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.es.gov.br/fonts/font-awesome/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title> Senai | Login</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+
+#footer #niveis, #footer #niveis2, #footer #niveis3, #footer #niveis4 {
+    padding: 20px 20px 20px 20px;
+    display: block;
+    margin-top: 34%;
+}
+
+#footer .nivel4 {
+    background-color: #B70407;
+    text-align: center;
+}
+
+#footer .nivel4 p {
+    color: #FFFFFF;
+    display: inline;
+    font-size: 13px;
+}
+
+
+</style>
+	<body>
+	<nav>
+
+			<div class="innav">
+	
+				<div class="nav-instituicoes">
+					<ul class="links">
+						<li>
+							<a href="#">FIESP</a>
+						</li>
+						<li>
+							<a href="#">CIESP</a>
+						</li>
+						<li>
+							<a href="#">SESI</a>
+						</li>
+						<li>
+							<a href="#">SENAI</a>
+						</li>
+						<li>
+							<a href="#">IRS</a>
+						</li>
+						<li>
+							<a href="#">FIESP</a>
+						</li>
+						<li>
+							<a href="#">|</a>
+						</li>
+	
+						<li>
+							<a href="https://pt-br.facebook.com/senaicotia/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+						</li>
+						<li>
+							<a href="#">|</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/senaicotia" target="_blank"><i class="fab fa-twitter"></i></a>
+						</li>
+						<li>
+							<a href="#">|</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/senaicotia" target="_blank"><i class="fab fa-youtube"></i></a>
+						</li>
+						<li>
+							<a href="#">|</a>
+						</li>
+	
+						<li>
+							<a href="https://twitter.com/senaicotia" target="_blank"><i class="fab fa-linkedin"></i></a>
+						</li>
+	
+						<li>
+							<a href="#">|</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/senaicotia/" target="_blank"><i class="fab fa-instagram"></i></a>
+						</li>
+	
+						
+		
+					</ul>
+			</div>
+			
+			
+			</div>
+			<div class="navbar">
+	
+				<div class="logo">
+					<img src="/img/logo.png">
+				</div>
+				<div class="nav-links">
+					<ul class="links">
+						<li>
+							<a href="/Inicio">Inicio</a>
+						</li>
+					   
+						
+						<li>
+							<a href="/ManualPt1">Manual do Auditório</a>
+						   
+						</li>
+						
+	
+						<li  th:if="${session.usuarioLogado == null}">
+						<a href="/loginUsuario" th:if="${session.usuarioLogado == null}" >Login</a>
+							<i class='bx bxs-chevron-down icon icon-css'></i>
+							<ul class="adm-sub-menu sub-menu">
+								<li>
+									<a href="pagLogin">Administrador</a>
+								</li>
+							   
+							</ul>
+						   
+						</li>
+	
+						<li>
+						<a href="/logout" th:if="${session.usuarioLogado != null}">Sair</a>
+						   
+						</li>
+					</ul>
+				</div>
+	
+			</div>
+		</nav>
+			<div class="container">
+			
+				<div class="content">
+			
+					<div class="form-welcome">
+						<h2 class=" title title-welcome">Olá Novamente! </h2>
+						<p class="description">Por favor entre com as suas informações pessoais</p>
+						<p class="description">Para agendar um novo evento</p>
+	 
+					</div>
+
+					<div class="form">
+						<h2 class="title-form">Login </h2>
+						<form class="formulario" action="login">
+						<label class="label-input">
+						<i class="login_icon material-icons">person</i>
+						<input type="email" name="email" placeholder="Entre com seu email">
+						</label>
+						<label class="label-input">
+						<i class="login_icon material-icons">lock</i>
+						<input type="password" name="senha" placeholder="Entre com a sua senha" id="password">
+
+						</label>
+						<button class="btn btn-salvar" onclick=openModal()>Entrar</button>
+						</form>
+					</div>
+					
+					<div class="screen-background">
+				    	<span class="screen-background-shape screen-background-shape4"></span>
+				    	<span class="screen-background-shape screen-background-shape3"></span>
+				    	<span class="screen-background-shape screen-background-shape2"></span>
+				    	<span class="screen-background-shape screen-background-shape1"></span>
+    				</div>
+				</div>
+			</div>
+			
+		 <ul class="squares"></ul>
+
+ <footer id="footer">
+        <div id="niveis4" class="nivel4">
+        	<div class="content_footer">
+	        	<p>Criado por DEBS &copy; 2022 Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="modal-container">
+        <div class="modal">
+            <h2>Você está logado!
+            </h2>
+        </div>
+    </div>
+
+	<script src="js/modalLogado.js"></script>
+    <script src="js/scriptEfeito.js"></script>
+    <script src="js/scriptEfeito.js"></script>
+	
+	</body>
+
+</html>

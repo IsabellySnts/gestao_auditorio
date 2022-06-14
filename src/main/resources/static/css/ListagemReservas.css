@@ -1,0 +1,164 @@
+*{
+    margin: 10px;;
+    padding: 0%;
+    box-sizing: border-box;
+    font-size: 14pt;
+    font-family: 'arial', sans serif;
+    overflow: hidden;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+.tabela{
+    display: block;
+    background-color: #eeeeee;
+    box-shadow: 00px 0px 3 px rgb(red, green, blue.3);
+    border-collapse: collapse;
+    max-height: 400px;
+    overflow-x: hidden;
+}
+.tebela-title{
+	 padding: 20px;
+	 background-color: #DC143C;
+	 margin-bottom: 16%;
+	 width:58.5%;
+	 position:absolute;
+
+}
+.tebela-title .title{
+    font-size: 1.4em;
+	text-align:center;
+    color: #eeeeee;
+}
+.tabela thead{
+    background-color: black;
+}
+.tabela thead tr th{
+    text-align:left ;
+    color: white;
+}
+.tabela tbody tr:nth-child(even){
+    background-color: #bebebe ;
+}
+.tabela th,
+.tabela td{
+    padding: 15px;
+    border: 1px solid #cccccc;
+}
+
+.blListUsu{
+ 	background: red;
+ 	border-radius: 50px;
+ 	margin-top: 30%;
+ 	margin-left: -17%;
+ 	position: absolute;
+ }
+ 
+ .blListUsu a{
+text-decoration: none;
+color: white;
+}
+
+.blListRes{
+	background: red;
+ 	border-radius: 50px;
+ 	margin-top: 30%;
+ 	margin-left: 20%;
+ 	position: absolute; 	
+ }
+ 
+ .blListRes a{
+ 	text-decoration: none;
+	color: white;
+ }
+
+@keyframes move {
+    from {
+      opacity: 0;
+      transform: translateX(-35%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+@keyframes fade {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+@keyframes down {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100vh);
+    }
+  }
+  /* FORM NO-NO */
+  form.validate-error {
+    animation: nono 200ms linear, fade paused;
+    animation-iteration-count: 2;
+  }
+@keyframes nono {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    35% {
+      transform: translateX(-15%);
+    }
+    70% {
+      transform: translateX(15%);
+    }
+  }
+.squares li {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(68, 66, 67, 0.5);
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    animation: up 2s infinite alternate;
+    z-index:-1
+  }
+@keyframes up {
+    from {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-800px) rotate(960deg);
+    }
+  }
+@media screen and (max-width: 900px){
+    footer{
+        position: fixed;
+        bottom: 0px;
+    }
+.main-content{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+.main-content .box{
+        margin: 5px 0;
+    }
+}

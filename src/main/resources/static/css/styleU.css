@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+
+#footer #niveis, #footer #niveis2, #footer #niveis3, #footer #niveis4 {
+    padding: 20px 20px 20px 20px;
+    display: block;
+    margin-top: 34%;
+}
+
+#footer .nivel4 {
+    background-color: #B70407;
+    text-align: center;
+}
+
+#footer .nivel4 p {
+    color: #FFFFFF;
+    display: inline;
+    font-size: 13px;
+}
+

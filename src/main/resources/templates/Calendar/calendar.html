@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Senai | Calendário de eventos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/evo-calendar.min.css">
+    <link rel="stylesheet" href="css/evo-calendar.midnight-blue.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="img/senai-logo.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="hero">
+        <div id="calendar"></div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="js/evo-calendar.min.js"></script>
+
+    
+
+    <script>
+        $(document).ready(function() {
+    $('#calendar').evoCalendar({
+
+      
+        calendarEvents: [
+      {
+        id: 'event1', // Event's ID (required)
+        name: "Ano Novo", // Event name (required)
+        date: "January/1/2022", // Event date (required)
+        description:"As saudações comoventes farão com que alguém se sinta muito especial. Deseje seu próximo e querido com nossas saudações especiais.",
+        type: "holiday", // Event type (required)
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'event2', // Event's ID (required)
+        name: "Dia da mulher", // Event name (required)
+        date: "March/8/2022", // Event date (required)
+        description:"Um mundo igual é um mundo habilitado. Como você ajudará a forjar um mundo com igualdade de gênero?; Celebre a conquista das mulheres. Aumentar a conscientização contra o preconceito. Agir pela igualdade.",
+        type: "holiday", // Event type (required)
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'event3', // Event's ID (required)
+        name: "Dia do Trabalho", // Event name (required)
+        date: "May/1/2022", // Event date (required)
+        description:"O dia do trabalho é um feriado anual para celebrar as conquistas dos trabalhadores. A jornada de trabalho tem origem no movimento sindical, especificamente no movimento da jornada de oito horas, que preconiza oito horas de trabalho, oito horas de lazer e oito horas de descanso.",
+        type: "holiday", // Event type (required)
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        name: "Vacation Leave",
+        badge: "02/13 - 02/15", // Event badge (optional)
+        date: ["February/13/2022", "February/15/2020"], // Date range
+        description: "Férias de 3 dias.", // Event description (optional)
+        type: "event",
+        color: "#63d867" // Event custom color (optional)
+      }
+    ]
+    })
+})
+    </script>
+</body>
+
+</html>
